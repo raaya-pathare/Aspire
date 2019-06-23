@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Userhome from './Userhome'
 
 class Login extends React.Component {
 
@@ -34,7 +36,7 @@ class Login extends React.Component {
             name="password"/>
           </form>
         </div>
-        <button>Login</button>
+        <button><Link to={"/user/:id"}>Login</Link></button>
       </div>
 
       </React.Fragment>

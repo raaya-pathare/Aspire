@@ -15,23 +15,23 @@ class Signup extends React.Component {
       [ e.target.name ]: e.target.value })
   } 
 
-  submitHandler = e => {
-    e.preventDefault()
-    const field = e.target
-    this.setState({
-      first_name: field.first_name.value
-    })
-    fetch('users', {
-      method: 'POST',
-      data: {
+  // submitHandler = e => {
+  //   e.preventDefault()
+  //   const field = e.target
+  //   this.setState({
+  //     first_name: field.first_name.value
+  //   })
+  //   fetch('users', {
+  //     method: 'POST',
+  //     data: {
         
-      }
-    })
-    // return db('users')  
-    // .insert({ first_name: this.first_name })
-    //Other code lol
-    //Submit to users table
-  }
+  //     }
+  //   })
+  //   // return db('users')  
+  //   // .insert({ first_name: this.first_name })
+  //   //Other code lol
+  //   //Submit to users table
+  // }
 
   render() {
     return(
@@ -66,7 +66,7 @@ class Signup extends React.Component {
               placeholder='Password:'
               name="password"/>
               <input
-              type="text"
+              type="email"
               value={this.state.email_address}
               onChange={this.changeHandler}
               placeholder='Email Address:'
