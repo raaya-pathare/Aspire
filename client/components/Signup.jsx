@@ -23,11 +23,11 @@ export default class Signup extends React.Component {
   }
 
   sayHello () {
-    console.log('hello')
+    console.log('user has been added')
   }
 
   submitUser = e => {
-    addAUser(this.state, this.sayHello)
+    addAUser(this.state, this.confirmation)
   }
 
   render () {

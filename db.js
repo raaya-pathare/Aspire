@@ -13,6 +13,20 @@ function addUser (data, db = connection) {
     })
 }
 
+function addGoal (data, id, db = connection) {
+  return db('usergoals')
+    .insert({
+      goal_name: data.goal_name,
+      goal_description: data.goal_description,
+      why: data.why,
+      image: data.image,
+      date: data.date,
+      notifications: data.notifications,
+      user_id: id
+    })
+}
+
 module.exports = {
-  addUser
+  addUser,
+  addGoal
 }

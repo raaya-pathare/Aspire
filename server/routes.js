@@ -11,4 +11,14 @@ router.post('/', (req, res) => {
     .then(res.sendStatus(200))
 })
 
+router.post('/user/:id/addgoal', (req, res) => {
+  const id = req.params.id
+  const details = req.body
+  db.addGoal(id, details)
+    .then(details => {
+      console.log(details)
+    })
+    .then(res.sendStatus(200))
+})
+
 module.exports = router

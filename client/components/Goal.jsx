@@ -8,7 +8,6 @@ class Goal extends React.Component {
         <div className="goalcontainer">
           <h1>Climb Mt Everest</h1>
           <div>
-            <image src=""></image>
             <p>Goal Description</p>
             <p>Why do you want to achieve this goal?</p>
             <p>Date to (hopefully) complete it by.</p>
