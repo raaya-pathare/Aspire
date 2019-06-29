@@ -7,5 +7,6 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 server.use('/', routes)
 server.use('/user/:id/addgoal', routes)
+server.use('/user/:id', routes)
 
 module.exports = server

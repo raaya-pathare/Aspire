@@ -1,15 +1,19 @@
 import React from 'react'
 import { addAGoal } from '../api'
 
-class Addgoal extends React.Component {
-
-  state = {
-    goal_name: '',
-    goal_description: '',
-    why: '',
-    image: '',
-    date: '',
-    notifications: ''
+export default class Addgoal extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      goal_name: '',
+      goal_description: '',
+      why: '',
+      image: '',
+      date: '',
+      notifications: ''
+    }
+    this.changeHandler = this.changeHandler.bind(this)
+    this.submitGoal = this.submitGoal.bind(this)
   }
 
   changeHandler = e => {
@@ -28,11 +32,11 @@ class Addgoal extends React.Component {
 
   render () {
     return (
-      <>
+      <React.Fragment>
         <div>
           <h3>Add A New Goal</h3>
           <div>
-            <form onSubmit={this.submitHandler}>
+            <form method="POST">
               <input
                 type="text"
                 value={this.state.goal_name}
@@ -71,11 +75,9 @@ class Addgoal extends React.Component {
                 name="notifications" />
             </form>
           </div>
-          <button onClick={this.submitGoal}>Add Goal</button>
+          <button onClick={this.submitGoal} type="button">Add Goal</button>
         </div>
-      </>
+      </React.Fragment>
     )
   }
 }
-
-export default Addgoal

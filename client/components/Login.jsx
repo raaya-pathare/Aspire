@@ -1,16 +1,29 @@
 import React from 'react'
+import { userLogin } from '../api'
 
 class Login extends React.Component {
-
-  state = {
-    username: '',
-    password: ''
+  constructor (props) {
+    super(props)
+    this.state = {
+      username: '',
+      password: ''
+    }
+    this.changeHandler = this.changeHandler.bind(this)
+    this.submitLogin = this.submitLogin.bind(this)
   }
-
+  
   changeHandler = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  confirmation () {
+    console.log('user has logged in')
+  }
+
+  submitLogin = e => {
+    userLogin(this.state, this.confirmation)
   }
 
   render () {
@@ -35,7 +48,7 @@ class Login extends React.Component {
                 name="password" />
             </form>
           </div>
-          <button>Login</button>
+          <button onClick={this.submitLogin}>Login</button>
         </div>
 
       </React.Fragment>

@@ -10,6 +10,16 @@ export function addAUser (data, callback) {
     })
 }
 
+export function userLogin (data, callback) {
+  const url = 'http://localhost:3000/'
+  request
+    .post(url)
+    .send(data)
+    .end((err, res) => {
+      callback(err, res.body)
+    })
+}
+
 export function addAGoal (data, callback) {
   const url = 'http://localhost:3000/user/:id/addgoal'
   request
@@ -19,3 +29,4 @@ export function addAGoal (data, callback) {
       callback(err, res.body)
     })
 }
+

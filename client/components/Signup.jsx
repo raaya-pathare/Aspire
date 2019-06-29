@@ -27,7 +27,7 @@ export default class Signup extends React.Component {
   }
 
   submitUser = e => {
-    addAUser(this.state, this.confirmation)
+    addAUser(this.state, this.sayHello)
   }
 
   render () {

@@ -6,10 +6,12 @@ import Userhome from './Userhome'
 import Goal from './Goal'
 import Addgoal from './Addgoal'
 import { Route } from 'react-router-dom'
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const App = () => {
   return (
     <React.Fragment>
+      <CssBaseline />
       <div className="homepagecontainer">
         <Route exact path="/" component={Homepage} />
       </div>
